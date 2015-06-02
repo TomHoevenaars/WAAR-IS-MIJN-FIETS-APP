@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Waar Is Mijn Fiets?</title>
+      <link rel="stylesheet" href="css/jquery.mobile-1.2.0.css" type="text/css" media="all" />
+      <link rel="stylesheet" type="text/css" href="jqm-icon-pack-fa.css">
+      <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+      <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+      <script src="js/jquery-1.8.3.min.js"></script>
+      <script src="js/jquery.mobile.config.js"></script>
+      <script src="js/jquery.mobile-1.2.0.min.js"></script>
+      <script src="cordova.js"></script>
+      <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+      <script src="js/functions.js"></script>
+      <script src="js/maps.js"></script>
+      <script src="js/positions.js"></script>
+      <script>
+         $(document).one('deviceready', initApplication);
+      </script>
+   </head>
+   <body>
+      <div id="welcome-page" data-role="page">
+         <header data-role="header">
+            <h1><img src="images/bicycle.png"/>WAAR IS MIJN FIETS?</h1>
+         </header>
+         <div id="content" data-role="content">
+            <a href="map.html?requestType=set" id="set-fiets-position" data-role="button">SLA POSITIE OP</a>
+            <a href="map.html?requestType=get" id="find-fiets" data-role="button">VIND MIJN FIETS</a>
+            <a href="positions.html" id="positions-history" data-role="button">MIJN FIETSSTALLING LOCATIES</a>
+         </div>
+         <footer data-role="footer">
+            <h3>&copy; FRANK & TOM</h3>
+         </footer>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,106 @@
+.ui-header .ui-title,
+.ui-footer .ui-title,
+.ui-btn-inner *
+{
+   white-space: normal !important;
+}
+
+.photo
+{
+   display: block;
+   margin: 0px auto;
+}
+
+dl.informations dt
+{
+   font-weight: bold;
+}
+
+#map
+{
+   width: 100%;
+   height: 600px;
+}
+
+.ui-header .ui-title {
+	margin: 0px 0px 0px;
+	padding: 20px 0px 20px;
+}
+
+.ui-header img {
+	width: 25px;
+	height: 15px;
+	margin-right: 10px;
+}
+
+.ui-footer .ui-title {
+	margin: 0px 0px 0px;
+	padding: 10px 0 10px;
+	font-size: 10px;
+	font-weight: 100;
+}
+
+.ui-bar-b {
+	border: none;
+	background: #16bfb7;
+	text-shadow: none;
+}
+
+.ui-footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+.ui-content{
+	padding: 30px;
+}
+
+.map-content {
+	padding: 0;
+}
+
+.locaties-content li a{
+	margin-bottom: 10px;
+}
+
+.ui-body-b {
+	border: none;
+	background: #FFFFFF;
+}
+
+.ui-shadow {
+	box-shadow: none;
+}
+
+.back-icon {
+	line-height: 43px;
+}
+
+.ui-btn {
+	margin: 10px 0;
+}
+
+.ui-btn-corner-all {
+	border-radius: 0px;
+}
+
+.ui-btn-up-b {
+	border: none;
+	background: #16bfb7;
+	text-shadow: none;
+	font-weight: 100;
+}
+
+.ui-btn-hover-b {
+	border: none;
+	background: #69c2be;
+	text-shadow: none;
+	font-weight: 100;
+}
+
+.ui-btn-inner {
+	padding: 55px 20px;
+	border: none;
+}
