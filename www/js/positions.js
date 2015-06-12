@@ -16,9 +16,9 @@ function Position(position, address, datetime)
    {
       if (!_db)
       {
-         console.log('Er is geen data gevonden. Kan geen locaties ophalen.');
+         console.log('Kan de locatie niet opslaan');
          navigator.notification.alert(
-            'Kan deze locatie niet opslaan',
+            'Kan locatie niet ophalen',
             function(){},
             'Error'
          );
@@ -29,7 +29,7 @@ function Position(position, address, datetime)
          positions = [];
 
       positions.unshift(new Position(position, address, new Date()));
-
+      // Only the top MAX_POSITIONS results are needed
       if (positions.length > this.MAX_POSITIONS)
          positions = positions.slice(0, this.MAX_POSITIONS);
 
@@ -42,9 +42,9 @@ function Position(position, address, datetime)
    {
       if (!_db)
       {
-         console.log('Er is geen data gevonden. Kan geen locaties ophalen.');
+         console.log('Kan de locatie niet updaten');
          navigator.notification.alert(
-            'Kan deze locatie niet updaten',
+            'Updaten van locatie is niet mogelijk',
             function(){},
             'Error'
          );
@@ -66,9 +66,9 @@ function Position(position, address, datetime)
    {
       if (!_db)
       {
-         console.log('Er is geen data gevonden. Kan geen locaties ophalen.');
+         console.log('Kan de locatie niet verwijderen');
          navigator.notification.alert(
-            'Kan deze locatie niet verwijderen',
+            'Verwijderen van locatie is niet mogelijk',
             function(){},
             'Error'
          );
@@ -87,9 +87,9 @@ function Position(position, address, datetime)
    {
       if (!_db)
       {
-         console.log('Er is geen data gevonden. Kan geen locaties ophalen.');
+         console.log('Kan geen locaties ophalen');
          navigator.notification.alert(
-            'Kan geen locaties ophalen',
+            'Ophalen van locaties is niet mogelijk',
             function(){},
             'Error'
          );

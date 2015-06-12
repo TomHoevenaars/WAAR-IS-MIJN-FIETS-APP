@@ -3,9 +3,9 @@ function checkRequirements()
    if (navigator.network.connection.type == Connection.NONE)
    {
       navigator.notification.alert(
-         'Zet je internet verbinding aan om deze app te kunnen gebruiken.',
+         'Zet je internet verbinding aan om deze APP te kunnen gebruiken.',
          function(){},
-         'Let op!'
+         'Waarschuwing'
       );
       return false;
    }
@@ -61,8 +61,8 @@ function initApplication()
          var requestType = urlParam('requestType');
          var positionIndex = urlParam('index');
          var geolocationOptions = {
-            timeout: 15 * 1000, 
-            maximumAge: 10 * 1000, 
+            timeout: 15 * 1000, // 15 seconds
+            maximumAge: 10 * 1000, // 10 seconds
             enableHighAccuracy: true
          };
          var position = new Position();
@@ -86,17 +86,17 @@ function initApplication()
                   Map.requestLocation(location);
                   Map.displayMap(location, null);
                   navigator.notification.alert(
-                     'Fiets opgeslagen!',
+                     'Je locatie is opgeslagen.',
                      function(){},
-                     'Info'
+                     'Gelukt!'
                   );
                },
                function(error)
                {
                   navigator.notification.alert(
-                     'Geen locatie gevonden, staat je GPS aan?',
+                     'Kan geen locatie opslaan. Staat je GPS aan?',
                      function(){
-                        alert("Kan locatie niet ophalen: " + error.message);
+                        alert("Kan de locatie niet ophalen: " + error.message);
                      },
                      'Error'
                   );
@@ -110,7 +110,7 @@ function initApplication()
             if (position.getPositions().length == 0)
             {
                navigator.notification.alert(
-                  'Je hebt nog geen fiets opgeslagen',
+                  'Je hebt geen locatie opgeslagen',
                   function(){},
                   'Error'
                );
@@ -130,7 +130,7 @@ function initApplication()
                   },
                   function(error)
                   {
-                     console.log("Kan locatie niet ophalen: " + error.message);
+                     console.log("Kan de locatie niet ophalen: " + error.message);
                   },
                   geolocationOptions
                );
@@ -192,7 +192,7 @@ function createPositionsHistoryList(idElement, positions)
 
       $listElement.append($linkElement);
 
-      $linkElement = $('<a>');
+      $linkElement = $('<a class="delete-position">');
       $linkElement.attr('href', '#')
       .text('Delete')
       .click(
@@ -211,7 +211,7 @@ function createPositionsHistoryList(idElement, positions)
             else
             {
                navigator.notification.alert(
-                  'Locatie niet verwijderd, probeer het nog een keer.',
+                  'Locatie niet verwijderd. Er ging iets mis, probeer het nog eens.',
                   function(){},
                   'Error'
                );

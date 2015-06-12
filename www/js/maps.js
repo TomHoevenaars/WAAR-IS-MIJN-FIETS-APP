@@ -24,7 +24,7 @@ Map.displayMap = function(userPosition, fietsPosition)
    var marker = new google.maps.Marker({
       position: userLatLng,
       map: map,
-      title: 'Jou locatie'
+      title: 'Your position'
    });
 
    if (fietsLatLng == null)
@@ -48,7 +48,7 @@ Map.displayMap = function(userPosition, fietsPosition)
          position: fietsLatLng,
          map: map,
          icon: 'images/bicycle-marker.png',
-         title: 'fiets position'
+         title: 'Fiets locatie'
       });
       circle = new google.maps.Circle({
          center: fietsLatLng,
@@ -60,6 +60,7 @@ Map.displayMap = function(userPosition, fietsPosition)
          strokeOpacity: 1.0
       });
 
+      // Display route to the fiets
       options = {
          suppressMarkers: true,
          map: map,
@@ -90,9 +91,9 @@ Map.setRoute = function(directionsDisplay, userLatLng, fietsLatLng)
          else
          {
             navigator.notification.alert(
-               'Kan de route naar je fiets niet vinden. Maar je kan de weg altijd zelf nog vinden! :)',
+               'Kan de route naar je fiets niet berekenen. Probeer er zelf heen te lopen :)',
                function(){},
-               'Warning'
+               'Waarschuwing'
             );
          }
       }
